@@ -1,11 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Models.Entities
 {
     public class User
     {
         [Key]
-        public string GUID { get; set; } = Guid.NewGuid().ToString();
+
+        public string EmployeeID { get; set; } = Guid.NewGuid().ToString();
 
         public string Name { get; set; }
         public string PasswordHash { get; set; }
@@ -16,7 +18,6 @@ namespace Models.Entities
         public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
         public int RoleId { get; set; }
         public Role Role { get; set; }
-
 
     }
 }
